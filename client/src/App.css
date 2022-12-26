@@ -1,0 +1,203 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", serif;
+}
+
+/* TOP BAR */
+.header {
+  background-color: white;
+}
+.topbarColumn {
+  float: right;
+  padding-left: 100px;
+}
+
+.links {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.links2 {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.links2 a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.logo {
+  margin-bottom: -4px;
+  
+}
+.logo2 {
+  margin-bottom: -4px;
+  max-width: 150px;
+}
+.loggedInUI {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.logoutButton {
+  background-color: white;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 17px;
+  float: left;
+}
+.nameDisplay {
+  margin-top: 5px;
+  margin-right: 25px;
+  float: left;
+}
+
+/* Display Box Positioning */
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Display Boxes */
+.displayBoxDisplay{ 
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 7px;
+}
+.description {
+  padding-right: 100px;
+  margin-top: 10px;
+  inline-size: 300px;
+  word-break: break-all;
+}
+.displayBoxImg {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 50%;
+  margin-right: 30px;
+  width: 110px;
+  height: 110px;
+}
+.column {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.placeholder {
+  opacity: 0;
+  background-color: rgb(245, 245, 245);
+}
+
+
+/* About Page */
+.aboutText {
+  margin-top: 150px;
+  text-align: center;
+  font-size: 50px;
+}
+
+
+/* Login Page */
+.formBackground {
+  background-color: white;
+  width: 50%;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  border-radius: 15px;
+  margin-left: 50vw;
+  transform: translate(-50%, 0%);
+}
+.formBackground-2 {
+  background-color: white;
+  width: 74%;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  border-radius: 15px;
+  margin-left: 50vw;
+  transform: translate(-50%, 0%);
+}
+.form {
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.formColumn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.formInput {
+  font-size: 30px;
+  margin-left: 10px;
+}
+.formButton {
+  background-color: white;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 22px;
+}
+.linkBtn {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: black;
+}
+
+/* Submit Project Page */
+.submit-proj {
+  font-size: 30px;
+  margin-top: 100px;
+  /* margin-left: 50vw; */
+  /* transform: translate(-25%, -100%); */
+}
+.proj-img {
+  margin-left: 50%;
+  transform: translate(-32%, 0%);
+}
+.proj-desc {
+  border: solid 1px black;
+  resize: none;
+}
+
+/* Navigate Bar */
+.navigateMain {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.navigateBtn {
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  float: left;
+  margin-left: 10px;
+}
