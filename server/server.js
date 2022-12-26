@@ -52,7 +52,9 @@ app.use(express.urlencoded({extended: false}))
 require('dotenv').config()
 app.use(flash())
 
-mongoose.connect(process.env.MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true, maxIdleTimeMS : 270000, minPoolSize : 2, maxPoolSize : 4})
+mongoose.connect(process.env.MONGODB_URI, () => {
+  console.log("CONNECTED TO MONGODB")
+})
 //mongoose.connect("mongodb://127.0.0.1/portfolioDB")
 
 fs.readdir(uploadPath, (err, files) => {
