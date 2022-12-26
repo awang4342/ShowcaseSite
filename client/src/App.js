@@ -7,6 +7,8 @@ import CreateAccount from "./components/CreateAccount";
 import { useRoutes, BrowserRouter as Router } from "react-router-dom";
 import SubmitProject from "./components/SubmitProject";
 
+
+
 const Routing = () => {
   const routes = useRoutes([
       { path: '/', element: <Home /> },
@@ -19,7 +21,6 @@ const Routing = () => {
 
   return routes;
 };
-
 
 const App = () => {
   document.body.style = 'background-color: rgb(245, 245, 245);';

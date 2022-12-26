@@ -19,7 +19,7 @@ export default function DisplayBox({ getImg, getPost, checkImg, index}) {
       
     })
     getImg(index).then(res => {
-        setImg("https://secure-eyrie-17225.herokuapp.com/" + res)
+        setImg("http://localhost:3001/" + res)
     })
   }
  

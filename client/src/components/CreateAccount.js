@@ -9,7 +9,7 @@ export default function CreateAccount() {
     const navigate = useNavigate()
 
     useEffect(async () => {
-        await axios.post('https://secure-eyrie-17225.herokuapp.com/checkCode?code=' + code)
+        await axios.post(this.context + "/checkCode?code=" + code)
         .then(res => {
             const data = res.data
             if (data === false) {
@@ -18,10 +18,9 @@ export default function CreateAccount() {
             }
         })
     })
-
     function Form() {
         return (
-        <form className="form" action='https://secure-eyrie-17225.herokuapp.com/createAccount' method="POST">
+        <form className="form" action='http://localhost:3001/createAccount' method="POST">
             <div className='formBackground'>
                 <div className='formColumn'>
                 <label>Username:</label>
@@ -46,7 +45,7 @@ export default function CreateAccount() {
 
     function Form2() {
         return (
-        <form className="form" action='https://secure-eyrie-17225.herokuapp.com/createAccount' method="POST">
+        <form className="form" action='http://localhost:3001/createAccount' method="POST">
             <div className='formBackground-2'>
 
                 

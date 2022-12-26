@@ -5,7 +5,7 @@ export default function Navigate({ page, setPage }) {
   const [imageCount, setCount] = useState(0)
 
   const sendAPI = () => {
-    axios.post('https://secure-eyrie-17225.herokuapp.com/img-count')
+    axios.post('http://localhost:3001/img-count')
     .then(res => {
       const info = res.data
       setCount(info)

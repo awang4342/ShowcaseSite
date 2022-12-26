@@ -33,7 +33,7 @@ export default function Display({ page }) {
   // Gets image at index
   async function getImage(i) {
     var val
-    await axios.post('https://secure-eyrie-17225.herokuapp.com/get-images?index=' + i)
+    await axios.post('http://localhost:3001/get-images?index=' + i)
     .then(res => {
       val = res.data
     })
@@ -44,7 +44,7 @@ export default function Display({ page }) {
   //Gets post at index 
   async function getPost(i) {
     var path = getImage(i)
-    await axios.post('https://secure-eyrie-17225.herokuapp.com/get-images?index=' + i)
+    await axios.post('http://localhost:3001/get-images?index=' + i)
     .then(res => {
       path = res.data
     })
@@ -54,7 +54,7 @@ export default function Display({ page }) {
     // const parsedName = splitString[0] + "." + splitString[2]
     var post
     // console.log("USERNAME: " + name)
-    await axios.post('https://secure-eyrie-17225.herokuapp.com/get-post?imgName=' + name)
+    await axios.post('http://localhost:3001/get-post?imgName=' + name)
     .then(res => {
       post = res.data;
     })  
@@ -76,7 +76,7 @@ export default function Display({ page }) {
   //Checks if there is an image at index
   async function checkImage(i) {
     var val
-    await axios.post('https://secure-eyrie-17225.herokuapp.com/get-images?index=' + i)
+    await axios.post('http://localhost:3001/get-images?index=' + i)
     .then(res => {
       // console.log("IMAGE DATA IS: "  + res.data)
       val = res.data

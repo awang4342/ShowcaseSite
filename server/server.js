@@ -21,35 +21,39 @@ const user = require('./models/user')
 
 const uploadPath = path.join(__dirname, "uploads")
 const origin = 'https://deluxe-gecko-33a09b.netlify.app'
-// const origin = 'http://localhost:3000'
+//const origin = 'http://localhost:3000'
 var totalFiles = 0
 
 app.use(cors({
-  origin: origin,
   credentials: true,
+  origin: origin
 }));
 
-app.use(cookieParser())
+app.use(express.urlencoded({extended: true}));
+
 app.use(session({ 
   secret: 'something', 
   maxAge : 60*60*1000,
   resave: false,
   saveUninitialized: false,
-  cookie: { 
-    sameSite: 'none',
-      secure: true
-  }})); 
-  require('./passportConfig')(passport)
-  app.use(passport.initialize())
-  app.use(passport.session())
+  sameSite: "none",
+  secure: true
+}));
+app.use(passport.initialize())
+app.use(passport.session())
 
-  app.enable('trust proxy')
-  app.use(express.urlencoded({extended: false}))
-  require('dotenv').config()
-  app.use(flash())
+app.use(cookieParser())
+ 
+require('./passportConfig')(passport)
+
+
+app.enable('trust proxy')
+app.use(express.urlencoded({extended: false}))
+require('dotenv').config()
+app.use(flash())
 
 mongoose.connect(process.env.MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true, maxIdleTimeMS : 270000, minPoolSize : 2, maxPoolSize : 4})
-// mongoose.connect("mongodb://127.0.0.1/portfolioDB")
+//mongoose.connect("mongodb://127.0.0.1/portfolioDB")
 
 fs.readdir(uploadPath, (err, files) => {
   console.log("FILES:::::")
@@ -157,9 +161,11 @@ app.post('/login', (req, res, next) => {
 });
 
 // Logout
-app.post('/logout', (req, res) => {
-  req.logout()
-  res.redirect(origin)
+app.post('/logout', (req, res, next) => {
+  req.logout(function(err){
+    if (err) { return next(err) }
+    res.redirect(origin)
+  })
 })
 
 // Sign Up
@@ -246,7 +252,6 @@ app.post('/submit', async (req, res) => {
   })  
 })
 
-//process.env.PORT
 app.listen(process.env.PORT, () => {
     console.log("new")
 }); 

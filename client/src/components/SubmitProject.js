@@ -20,7 +20,7 @@ export default function SubmitProject() {
 
   return (
     <>
-      <form className='submit-proj' action='https://secure-eyrie-17225.herokuapp.com/submit' method="POST" encType='multipart/form-data'>
+      <form className='submit-proj' action='http://localhost:3001/submit' method="POST" encType='multipart/form-data'>
         <div className='formBackground'>
           <div className='formColumn'>
             <label>Description:</label>
