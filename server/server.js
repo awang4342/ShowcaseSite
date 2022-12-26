@@ -53,11 +53,13 @@ require('dotenv').config()
 app.use(flash())
 
 const connectDatabase = async () => {
+  console.log("connceting to database")
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
-
+    console.log("inside of try")
+    await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
     console.log("connected to database");
   } catch (error) {
+    console.log("failed to connect")
     console.log(error);
     process.exit(1);
   }
