@@ -54,8 +54,6 @@ app.use(flash())
 
 const connectDatabase = async () => {
   try {
-    mongoose.set("useNewUrlParser", true);
-    
     await mongoose.connect(process.env.MONGODB_URI);
 
     console.log("connected to database");
