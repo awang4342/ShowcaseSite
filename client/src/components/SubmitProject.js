@@ -8,7 +8,7 @@ export default function SubmitProject() {
   // const [isLoading, setLoading] = useState(true);
 
   // async function getUsername() {
-  //   await axios('http://localhost:3001/get-user', {
+  //   await axios('https://showcasesite.onrender.com/get-user', {
   //     method: "POST",
   //     withCredentials: true
   //   }).then(res => {
@@ -20,7 +20,7 @@ export default function SubmitProject() {
 
   return (
     <>
-      <form className='submit-proj' action='http://localhost:3001/submit' method="POST" encType='multipart/form-data'>
+      <form className='submit-proj' action='https://showcasesite.onrender.com/submit' method="POST" encType='multipart/form-data'>
         <div className='formBackground'>
           <div className='formColumn'>
             <label>Description:</label>

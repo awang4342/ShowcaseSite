@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom"
 export default function Login() {
   const navigate = useNavigate()
   async function checkNotAuthenticated() {
-    await axios('http://localhost:3001/get-auth', {
+    await axios('https://showcasesite.onrender.com/get-auth', {
       method: "POST",
       withCredentials: true
     }).then(res => {
@@ -27,7 +27,7 @@ export default function Login() {
     Default: () => {
       return (
         <>
-        <form className="form" action='http://localhost:3001/login' method="POST">
+        <form className="form" action='https://showcasesite.onrender.com/login' method="POST">
         <div className='formBackground'>
           <div className='formColumn'>
             <label>Username:</label>
@@ -49,7 +49,7 @@ export default function Login() {
     Columned: () => {
       return (
           <>
-          <form className="form" action='http://localhost:3001/login' method="POST">
+          <form className="form" action='https://showcasesite.onrender.com/login' method="POST">
         <div className='formBackground-2'>
 
             <div className='formColumn'>

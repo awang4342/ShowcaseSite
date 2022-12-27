@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive'
 export default function SignUp() {
   const navigate = useNavigate()
   async function checkNotAuthenticated() {
-    await axios('http://localhost:3001/get-auth', {
+    await axios('https://showcasesite.onrender.com/get-auth', {
       method: "POST",
       withCredentials: true
     }).then(res => {
@@ -23,7 +23,7 @@ export default function SignUp() {
 
   function Form() {
     return  (
-    <form className="form" action='http://localhost:3001/verification' method="POST">
+    <form className="form" action='https://showcasesite.onrender.com/verification' method="POST">
         <div className='formBackground'>
           <div className='formColumn'>
             <label>Verification Code:</label>
@@ -40,7 +40,7 @@ export default function SignUp() {
 
   function Form2() {
     return  (
-      <form className="form" action='http://localhost:3001/verification' method="POST">
+      <form className="form" action='https://showcasesite.onrender.com/verification' method="POST">
       <div className='formBackground-2'>
         <div className='formColumn'>
         <label>Verification Code:</label>

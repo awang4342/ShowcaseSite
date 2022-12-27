@@ -14,7 +14,7 @@ const Header = () => {
 
   //get username from session cookie
   async function getUsername() {
-    await axios('http://localhost:3001/get-user', {
+    await axios('https://showcasesite.onrender.com/get-user', {
       method: "POST",
       withCredentials: true
     }).then(res => {
@@ -38,7 +38,7 @@ const Header = () => {
     <>
       <div className='loggedInUI'>
         <div className='nameDisplay'>Logged in as: {username}</div>
-        <form action='http://localhost:3001/logout' method="POST">
+        <form action='https://showcasesite.onrender.com/logout' method="POST">
           <button className='logoutButton' input="submit">Logout</button>
         </form>
         </div>
@@ -53,7 +53,7 @@ const Header = () => {
   const accessLogin = async () => {
     var currTime = new Date().getTime()/1000;
     if (currTime - timer <= 1) {
-      await axios('http://localhost:3001/get-auth', {
+      await axios('https://showcasesite.onrender.com/get-auth', {
         method: "POST",
         withCredentials: true
       }).then(res => {
