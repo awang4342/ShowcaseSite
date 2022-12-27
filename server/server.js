@@ -47,11 +47,13 @@ app.get('/', function(req, res){
 app.use(express.urlencoded({extended: true}));
 app.use(session({ 
   secret: 'something', 
-  maxAge : 60*60*1000,
-  resave: false,
   saveUninitialized: false,
-  sameSite: "none",
-  secure: true
+  resave: false,
+  cookie: {
+    sameSite: "none",
+    secure: true,
+    maxAge : 60*60*1000
+  }
 }));
 app.use(passport.initialize())
 app.use(passport.session())
