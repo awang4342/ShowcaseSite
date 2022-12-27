@@ -8,6 +8,7 @@ export default function Navigate({ page, setPage }) {
     axios.post('https://showcasesite.onrender.com/img-count')
     .then(res => {
       const info = res.data
+      console.log(info)
       setCount(info)
     })
   }
@@ -18,12 +19,16 @@ export default function Navigate({ page, setPage }) {
   const numbOfBtns = 5;
 
   const calcMaxPages = () => {
-    return Math.ceil(imageCount/itemsPerPage)
+    console.log("image count: " + imageCount)
+    return Math.ceil(imageCount/itemsPerPage) - 1
   }
 
   const checkPages = (currPage) => {
-    const maxPages = Math.floor(imageCount/itemsPerPage)
-    // console.log(imageCount)
+    const maxPages = calcMaxPages()
+    console.log("max pages: "+ maxPages)
+    // console.log("num images: " + imageCount)
+    // console.log("curr page " + currPage)
+    // console.log("max pages " + maxPages)
     if (currPage <= maxPages) {
       return true
     }
@@ -42,7 +47,7 @@ export default function Navigate({ page, setPage }) {
   return (
     <>
         <div className="navigateMain">
-            { checkPages(0) ? <button className='navigateBtn' onClick={() => {changePage(0)} }>{ calcPageNumber(1) }</button> : null }
+            { checkPages(0) ? <button className='navigateBtn' onClick={() => {changePage(0)}}>{ calcPageNumber(1) }</button> : null }
             { checkPages(1) ? <button className='navigateBtn' onClick={() => {changePage(1)}}>{ calcPageNumber(2) }</button> : null }
             { checkPages(2) ? <button className='navigateBtn' onClick={() => {changePage(2)}}>{ calcPageNumber(3) }</button> : null }
             { checkPages(3) ? <button className='navigateBtn' onClick={() => {changePage(3)}}>{ calcPageNumber(4) }</button> : null }

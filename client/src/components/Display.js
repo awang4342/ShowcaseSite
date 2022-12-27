@@ -82,7 +82,7 @@ export default function Display({ page }) {
       val = res.data
     })
     if (val == "") {
-      console.log("not displaying image: " + i)
+      // console.log("not displaying image: " + i)
       return false
     }
     return true
@@ -92,7 +92,7 @@ export default function Display({ page }) {
   //   return <div>{checkImage() ? <DisplayBox getImg={getImage} getPost={getPost} index={i} /> : <Placeholder />}</div>
   // }
   function displayBoxWrapper(i) {
-    return <div>{<DisplayBox getImg={getImage} getPost={getPost} checkImg={checkImage} index={i} />}</div>
+    return <div>{<DisplayBox getImg={getImage} getPost={getPost} checkImg={checkImage} pageNum = {page} index={i} />}</div>
   }
 
   const Components = {
