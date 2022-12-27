@@ -30,8 +30,7 @@ app.use(cors({
 }));
 
 app.use(function (req, res, next) {
-
-  res.header('Access-Control-Allow-Origin', "http://localhost:4200");
+  res.header('Access-Control-Allow-Origin', origin);
   res.header('Access-Control-Allow-Headers', true);
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -40,15 +39,12 @@ app.use(function (req, res, next) {
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-
 app.get('/', function(req, res){
   res.render('index', {
       title: 'View Engine Demo'
   })
 })
-
 app.use(express.urlencoded({extended: true}));
-
 app.use(session({ 
   secret: 'something', 
   maxAge : 60*60*1000,
@@ -59,17 +55,11 @@ app.use(session({
 }));
 app.use(passport.initialize())
 app.use(passport.session())
-
 app.use(cookieParser())
- 
 require('./passportConfig')(passport)
-
-
-app.enable('trust proxy')
 app.use(express.urlencoded({extended: false}))
 require('dotenv').config()
 app.use(flash())
-
 const connectDatabase = async () => {
   console.log("connceting to database")
   try {
@@ -82,9 +72,7 @@ const connectDatabase = async () => {
     process.exit(1);
   }
 };
-
 connectDatabase();
-
 //mongoose.connect("mongodb://127.0.0.1/portfolioDB")
 
 fs.readdir(uploadPath, (err, files) => {
