@@ -24,6 +24,15 @@ const origin = 'https://deluxe-gecko-33a09b.netlify.app'
 //const origin = 'http://localhost:3000'
 var totalFiles = 0
 
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
+app.get('/', function(req, res){
+  res.render('index', {
+      title: 'View Engine Demo'
+  })
+})
+
 app.use(cors({
   credentials: true,
   origin: origin
