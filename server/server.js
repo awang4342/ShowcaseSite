@@ -20,7 +20,7 @@ const signUpCode = require('./models/signUpCode')
 const user = require('./models/user')
 
 const uploadPath = path.join(__dirname, "uploads")
-const origin = 'https://deluxe-gecko-33a09b.netlify.app'
+const origin = 'https://63aa073146200d6640f4ff76--deluxe-gecko-33a09b.netlify.app/'
 //const origin = 'http://localhost:3000'
 var totalFiles = 0
 
