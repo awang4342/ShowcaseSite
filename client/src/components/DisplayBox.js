@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
 
 //img, getPost,
-export default function DisplayBox({ getImg, getPost, checkImg, index}) {
+export default function DisplayBox({ getImg, getPost, checkImg, pageNum, index}) {
   const [description, setDesc] = useState("")
   const [author, setAuthor] = useState("")
   const [img, setImg] = useState("")
   const [display, setDisplay] = useState(true)
-  checkImg(index).then(res => {
+  const offset = 4 * (pageNum)
+  const imgIndex = index + offset
+  console.log("curr page num: " + pageNum)
+  console.log("checking image: " + imgIndex)
+  checkImg(imgIndex).then(res => {
     setDisplay(res)
   })
   if (display) {
-    console.log("DISPLAYING")
-    getPost(index).then(res => { 
+    // console.log("DISPLAYING")
+    getPost(imgIndex).then(res => { 
       if (res) {
         setDesc(res['description']) 
       setAuthor(res['author'])
       }
       
     })
-    getImg(index).then(res => {
+    getImg(imgIndex).then(res => {
         setImg("https://showcasesite.onrender.com/" + res)
     })
   }
