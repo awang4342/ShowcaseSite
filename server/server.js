@@ -55,8 +55,8 @@ app.use(flash())
 const connectDatabase = async () => {
   console.log("connceting to database")
   try {
-    console.log("inside of try")
-    await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+    console.log("inside of try " + process.env.MONGODB_URI)
+    await mongoose.connect(process.env.MONGODB_URI, {useUnifiedTopology: true, useNewUrlParser: true, maxIdleTimeMS : 270000, minPoolSize : 2, maxPoolSize : 4});
     console.log("connected to database");
   } catch (error) {
     console.log("failed to connect")
