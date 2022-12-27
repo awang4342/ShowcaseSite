@@ -49,13 +49,20 @@ app.use(session({
   secret: 'something', 
   saveUninitialized: false,
   resave: false,
+  sameSite: "none",
+  secure: true,
+  maxAge : 60*60*1000,
+  httpOnly: true,
   cookie: {
-    SameSite: "none",
+    sameSite: "none",
     secure: true,
     maxAge : 60*60*1000,
     httpOnly: true
   }
 }));
+
+app.enable('trust proxy')
+
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser())
