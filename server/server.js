@@ -93,17 +93,16 @@ fs.readdir(uploadPath, (err, files) => {
   totalFiles = files.length
 })
 
-fs.readdir(uploadPath, (err, files) => {
-  console.log("FILES:::::")
-  files.forEach(function(file){
-    console.log("Files: " + file)
-  })
-  totalFiles = files.length
-})
-
 // //Send Number of Images to Client
 app.post('/img-count', (req, res) => {
   // console.log(totalFiles)
+  fs.readdir(uploadPath, (err, files) => {
+    console.log("FILES:::::")
+    files.forEach(function(file){
+      console.log("Files: " + file)
+    })
+    totalFiles = files.length
+  })
   res.json(totalFiles)
 })
 
