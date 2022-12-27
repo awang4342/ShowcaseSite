@@ -90,7 +90,7 @@ fs.readdir(uploadPath, (err, files) => {
   files.forEach(function(file){
     console.log("Files: " + file)
   })
-  totalFiles = files.length
+  totalFiles = files.length - 1
 })
 
 // //Send Number of Images to Client
@@ -101,7 +101,7 @@ app.post('/img-count', (req, res) => {
     files.forEach(function(file){
       console.log("Files: " + file)
     })
-    totalFiles = files.length
+    totalFiles = files.length - 1
   })
   res.json(totalFiles)
 })
