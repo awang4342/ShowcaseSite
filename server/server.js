@@ -50,9 +50,10 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   cookie: {
-    sameSite: "none",
+    SameSite: "none",
     secure: true,
-    maxAge : 60*60*1000
+    maxAge : 60*60*1000,
+    httpOnly: true
   }
 }));
 app.use(passport.initialize())
